@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Recipe Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+        <div class="panel">
+            <input id="name" placeholder="Recipe name">
+            <input id="prep" placeholder="Prep time">
+            <input id="cook" placeholder="Cook time">
+            <input id="servings" type="number" min="1" value="4" placeholder="Servings">
+
+            <div id="ingredientsList" class="list"></div>
+            <button id="addIngredient">+ Ingredient</button>
+
+            <div id="stepsList" class="list"></div>
+            <button id="addStep">+ Step</button>
+
+            <div class="theme-chips">
+                <div class="chip active" data-theme="classic">Classic</div>
+                <div class="chip" data-theme="modern">Modern</div>
+                <div class="chip" data-theme="rustic">Rustic</div>
+            </div>
+
+            <button id="printBtn">Print / PDF</button>
+            <button id="clearBtn">Clear</button>
+        </div>
+
+        <div class="preview">
+            <div class="recipe-card" id="card" data-theme="classic">
+                <h1 id="cardTitle">Untitled Recipe</h1>
+                <div class="meta">
+                    <span id="metaPrep">Prep: —</span>
+                    <span id="metaCook">Cook: —</span>
+                    <span id="metaServ">Serves: —</span>
+                </div>
+                <h3>Ingredients</h3>
+                <div id="cardIngredients">
+                    <p>No ingredients yet.</p>
+                </div>
+                <h3>Instructions</h3>
+                <div id="cardSteps">
+                    <p>No instructions yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
