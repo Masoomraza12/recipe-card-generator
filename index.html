@@ -9,12 +9,35 @@
 </head>
 
 <body>
+    <header class="app-header">
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 4L13 5L11 4L5 7V9C5 10.1 5.9 11 7 11V20C7 21.1 7.9 22 9 22H15C16.1 22 17 21.1 17 20V11C18.1 11 19 10.1 19 9H21Z" fill="currentColor"/>
+            </svg>
+            <div class="logo-text">
+                <h1>Recipe Card Generator</h1>
+                <p>Create beautiful recipe cards</p>
+            </div>
+        </div>
+    </header>
     <div class="app">
         <div class="panel">
             <input id="name" placeholder="Recipe name">
-            <input id="prep" placeholder="Prep time">
-            <input id="cook" placeholder="Cook time">
-            <input id="servings" type="number" min="1" value="4" placeholder="Servings">
+            <div class="input-group">
+                <input id="prep" placeholder="Prep time (e.g., 15 mins)">
+                <input id="cook" placeholder="Cook time (e.g., 30 mins)">
+            </div>
+            <div class="input-group">
+                <input id="servings" type="number" min="1" value="4" placeholder="Servings">
+                <select id="difficulty">
+                    <option value="">Select difficulty</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+            <input id="description" placeholder="Brief description (optional)">
+            <input id="category" placeholder="Category (e.g., Dessert, Main Course)">
 
             <div id="ingredientsList" class="list"></div>
             <button id="addIngredient">+ Ingredient</button>
@@ -35,11 +58,14 @@
         <div class="preview">
             <div class="recipe-card" id="card" data-theme="classic">
                 <h1 id="cardTitle">Untitled Recipe</h1>
+                <div id="cardDescription" class="description"></div>
                 <div class="meta">
                     <span id="metaPrep">Prep: —</span>
                     <span id="metaCook">Cook: —</span>
                     <span id="metaServ">Serves: —</span>
+                    <span id="metaDiff">Difficulty: —</span>
                 </div>
+                <div id="cardCategory" class="category"></div>
                 <h3>Ingredients</h3>
                 <div id="cardIngredients">
                     <p>No ingredients yet.</p>
